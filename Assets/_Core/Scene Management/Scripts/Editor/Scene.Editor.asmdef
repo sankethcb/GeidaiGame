@@ -1,0 +1,19 @@
+{
+    "name": "Scene.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4f94e3a2c371d544cb4ad1c042529774",
+        "GUID:e68d3274654523a4e8a1aee422c97093"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_EDITOR"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
