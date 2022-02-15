@@ -3,7 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
 
-public class ConversationData : MonoBehaviour
+[CreateAssetMenu(fileName = "ConversationData", menuName = "Geidai/Conversation Data", order = 1)]
+public class ConversationData : ScriptableObject
 {
-    List<TextReference> ConversationText;
+    public List<Speech> ConversationText;
+}
+
+
+[System.Serializable]
+public class Speech
+{
+    public bool PlayerSpeech = false;
+    public TextReference Text;
 }

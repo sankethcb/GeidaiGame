@@ -12,7 +12,7 @@ public class Player2D : MonoBehaviour
     [SerializeField] StateMachineHandler stateMachineHandler;
     [SerializeField] Movement2D movement2D;
     [SerializeField] Interaction2D interaction2D;
-
+    [SerializeField] Cinemachine.CinemachineVirtualCamera playerCamera;
 
     [Header("Variables")]
     [SerializeField] [ReadOnly] StateMachine<PlayerStates> stateMachine;
@@ -25,6 +25,7 @@ public class Player2D : MonoBehaviour
 
 
     public StateMachine<PlayerStates> StateMachine => stateMachine;
+    public Cinemachine.CinemachineVirtualCamera PlayerCamera => playerCamera;
 
     public enum PlayerStates
     {
@@ -100,7 +101,7 @@ public class Player2D : MonoBehaviour
     public void AttemptInteraction(InputAction.CallbackContext inputCallback) => AttemptInteraction();
     public void AttemptInteraction()
     {
-        if (interaction2D.Interactable == null)
+        if (interaction2D.Interactable == null || interaction2D.interacting)
             return;
         interaction2D.OnInteractStart += InteractionBehaviour;
         interaction2D.OnInteractComplete += PostInteraction;

@@ -22,7 +22,7 @@ public class Interaction2D : MonoBehaviour
     public event System.Action<bool> OnInteractStart;
     public event System.Action OnInteractComplete;
 
-    bool interacting = false;
+    public bool interacting = false;
 
     public void InteractWith()
     {

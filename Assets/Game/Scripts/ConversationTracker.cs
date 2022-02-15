@@ -6,11 +6,19 @@ using Cinemachine;
 
 public class ConversationTracker : MonoBehaviour
 {
+    public enum ConversationPosition
+    {
+        PLAYER_LEFT,
+        PLAYER_RIGHT
+    }
+
+
     [Header("References")]
     public Transform LeftTarget;
     public Transform RightTarget;
+    public Transform SpeechTarget;
     public CinemachineVirtualCamera ConversationCam;
-
+    public ConversationPosition Position;
     float m_speakerOffset;
     void Awake()
     {
@@ -24,12 +32,14 @@ public class ConversationTracker : MonoBehaviour
         {
             mainSpeakerPos.x -= m_speakerOffset;
             transform.position = mainSpeakerPos;
+            Position = ConversationPosition.PLAYER_LEFT;
             return LeftTarget.position;
         }
         else
         {
             mainSpeakerPos.x += m_speakerOffset;
             transform.position = mainSpeakerPos;
+            Position = ConversationPosition.PLAYER_RIGHT;
             return RightTarget.position;
         }
     }
