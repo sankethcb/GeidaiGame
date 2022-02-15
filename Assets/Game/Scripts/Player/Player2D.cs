@@ -11,7 +11,8 @@ public class Player2D : MonoBehaviour
     [Header("References")]
     [SerializeField] StateMachineHandler stateMachineHandler;
     [SerializeField] Movement2D movement2D;
-    
+    [SerializeField] Interaction2D interaction2D;
+
 
     [Header("Variables")]
     [SerializeField] [ReadOnly] StateMachine<PlayerStates> stateMachine;
@@ -40,9 +41,9 @@ public class Player2D : MonoBehaviour
 
     void InitalizeStateMachine()
     {
-        //stateMachine.GetState(PlayerStates.LOCKED).SetActions(
-        //onEnter: () => { StopPlayer();},
-        //onExit: EnableMovement);
+        stateMachine.GetState(PlayerStates.LOCKED).SetActions(
+        onEnter: () => { StopPlayer(); });
+
 
         idleToMoving = stateMachine.AddTransition(
             from: PlayerStates.IDLE,
@@ -72,7 +73,7 @@ public class Player2D : MonoBehaviour
 
     public virtual void MovementInput(Vector2 direction)
     {
-        if(stateMachine.activeState == stateMachine.GetState(PlayerStates.LOCKED))
+        if (stateMachine.activeState == stateMachine.GetState(PlayerStates.LOCKED))
             return;
 
         movement2D.SetMovementTarget(direction);
@@ -95,5 +96,31 @@ public class Player2D : MonoBehaviour
     public void Lock() => toLocked.Trigger?.Invoke(true);
     public void Unlock() => lockedToIdle.Trigger?.Invoke(true);
 
-    
+
+    public void AttemptInteraction(InputAction.CallbackContext inputCallback) => AttemptInteraction();
+    public void AttemptInteraction()
+    {
+        if (interaction2D.Interactable == null)
+            return;
+        interaction2D.OnInteractStart += InteractionBehaviour;
+        interaction2D.OnInteractComplete += PostInteraction;
+        interaction2D.InteractWith();
+    }
+
+    void InteractionBehaviour(bool lockPlayer)
+    {
+        interaction2D.OnInteractStart -= InteractionBehaviour;
+        if (lockPlayer)
+        {
+            Lock();
+        }
+    }
+
+    void PostInteraction()
+    {
+        interaction2D.OnInteractComplete -= PostInteraction;
+        if(stateMachine.activeState == stateMachine.GetState(PlayerStates.LOCKED))
+            Unlock();
+    }
+
 }
