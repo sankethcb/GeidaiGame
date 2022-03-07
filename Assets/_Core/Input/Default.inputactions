@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Exit",
+                    "type": "Button",
+                    "id": "e8bc6755-2355-452a-8cbc-ca1d5fda4f1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -327,17 +336,6 @@
                 },
                 {
                     "name": "",
-                    "id": "b79e1221-de5c-4414-913f-831a59cdb237",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "9db414af-7c53-414e-aba2-127d2679b025",
                     "path": "<Keyboard>/backquote",
                     "interactions": "Press",
@@ -355,6 +353,17 @@
                     "processors": "",
                     "groups": "KBM;KBSplit",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d6eb81b-eaba-4fcb-8cd3-87519cb320ee",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM;KBSplit",
+                    "action": "Exit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -9,7 +9,7 @@ public class Movement2D : MonoBehaviour
     [SerializeField] Rigidbody2D rigidBody2D;
 
     [Header("Settings")]
-    [SerializeField] float playerSpeed = 10;
+    public float playerSpeed = 10;
     [SerializeField] bool gravityEnabled = false;
     [Range(0, .3f)] [SerializeField] float smoothing = .05f;
 

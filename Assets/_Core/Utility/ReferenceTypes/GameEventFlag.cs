@@ -20,15 +20,19 @@ public class GameEventFlag : ScriptableObject
             Reset();
     }
 
+    [ContextMenu("Raise")]
     public void Raise()
     {
+        Debug.Log(name + " raised");
+
         raised = true;
         OnFlagRaised?.Invoke();
     }
+
+    [ContextMenu("Reset")]
     public void Reset()
     {
         raised = false;
         OnFlagReset?.Invoke();
     }
-
 }

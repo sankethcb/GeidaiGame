@@ -15,7 +15,7 @@ TagManager:
   - Interactor
   - Wall
   - Player
-  - 
+  - Bounds
   - 
   - 
   - 
@@ -44,6 +44,15 @@ TagManager:
   - name: Characters
     uniqueID: 1781535579
     locked: 0
+  - name: Door
+    uniqueID: 4049787669
+    locked: 0
   - name: Speech
     uniqueID: 1710346389
+    locked: 0
+  - name: Minigame
+    uniqueID: 379397703
+    locked: 0
+  - name: Gesture
+    uniqueID: 2688261255
     locked: 0

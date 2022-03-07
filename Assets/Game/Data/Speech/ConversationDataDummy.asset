@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f420536e1c5c7949b441ca9d22b4948, type: 3}
+  m_Name: ConversationDataDummy
+  m_EditorClassIdentifier: 
+  ConversationText:
+  - PlayerSpeech: 1
+    Text: {fileID: 11400000, guid: e6392daa85bd4334eb05412bf2198f36, type: 2}
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: {fileID: 11400000, guid: 326721a8734653c4a9210d7a9545fda0, type: 2}
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 1
+    Text: {fileID: 11400000, guid: 6b9950009124ff7478c62db9893606cb, type: 2}
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: {fileID: 0}
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: {fileID: 0}
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: {fileID: 0}
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: {fileID: 0}
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: {fileID: 0}
+    AnimationTrigger: 1
+    AnimationParameter: TEACH

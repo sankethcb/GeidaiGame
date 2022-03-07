@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f420536e1c5c7949b441ca9d22b4948, type: 3}
+  m_Name: Elephant5
+  m_EditorClassIdentifier: 
+  ConversationText:
+  - PlayerSpeech: 1
+    Text: Can you show me the gestures again to show Octo?
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: Forgotton already?  No worries my friend I'll show you one last time!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: I'm just kidding. But it is a bit tiring  when you are stuck in a door
+      frame.
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: The first letter is a L shape like this!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: 
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: The second letter is a sqaure shape like this!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: 
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: The third letter is a Z shape.
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: 
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: And the last one looks like a reverse 3!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: 
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: Did you get that?
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 1
+    Text: Cool, I think I got it now!
+    AnimationTrigger: 0
+    AnimationParameter: 

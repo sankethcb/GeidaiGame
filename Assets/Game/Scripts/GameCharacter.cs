@@ -4,18 +4,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
 
-public class GameCharacter : MonoBehaviour, IInteractable
+public interface IGamePlayable
 {
+    bool IsPlaying { get; }
+    IEnumerator Play();
+}
+
+
+
+public class GameCharacter : MonoBehaviour, IInteractable, IGamePlayable
+{
+
+    public Animator Animator;
     public ConversationData nextConversation;
+    public GameEventFlag InteractionEvent;
+    public Color CharacterColor = Color.white;
+    public ConversationTracker.ConversationPosition ConversationPosition;
 
     public bool LockPlayer => true;
+
+    public bool IsPlaying => isInPlayerConversation;
+
+    public Vector3 Position => transform.position;
 
     public event System.Func<GameCharacter, IEnumerator> RequestConversation;
     public event Action OnInteractionComplete;
 
+    bool isInPlayerConversation = false;
+
+
+    IGamePlayable currentPlayable;
     void Start()
     {
         GameSpeechSystem.RegisterCharacter(this);
+        currentPlayable = this;
     }
 
     void OnDestroy()
@@ -23,21 +45,35 @@ public class GameCharacter : MonoBehaviour, IInteractable
         GameSpeechSystem.DeregisterCharacter(this);
     }
 
-    public IEnumerator StartConversation()
-    {
-        yield return RequestConversation?.Invoke(this);
+    public void SetPlayable(GameObject Playable) => Playable.TryGetComponent<IGamePlayable>(out currentPlayable);
 
-        Debug.Log("Interaction Complete");
-        OnInteractionComplete?.Invoke();
+    public IEnumerator Play()
+    {
+        isInPlayerConversation = true;
+        yield return RequestConversation?.Invoke(this);
+        isInPlayerConversation = false;
+        InteractionEvent?.Raise();
     }
 
-    public void DoInteraction()
+    public IEnumerator DoInteraction()
     {
-        StartConversation().Start();
+        yield return currentPlayable.Play().Start();
+        InteractionComplete();
+    }
+
+    void InteractionComplete()
+    {
+        Debug.Log("Interaction complete");
+        OnInteractionComplete?.Invoke();
     }
 
     public void CancelInteraction()
     {
         throw new NotImplementedException();
     }
+
+    public void SetTrigger(string trigger) => Animator.SetTrigger(trigger);
+
+    public void SetConversation(ConversationData convo) => nextConversation = convo;
+
 }

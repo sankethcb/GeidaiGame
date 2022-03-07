@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f420536e1c5c7949b441ca9d22b4948, type: 3}
+  m_Name: Elephant4
+  m_EditorClassIdentifier: 
+  ConversationText:
+  - PlayerSpeech: 1
+    Text: I don't know what Octo is saying! All they've been doing is wiggling their
+      tentacles.
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: Oh I completely forgot, you can't speak their language!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: Here, let me show you how to say help. They use their tentacles to make
+      gestures!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: The first letter is a L shape like this!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: 
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: The second letter is a sqaure shape like this!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: 
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: The third letter is a Z shape.
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: 
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: And the last one looks like a reverse 3!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: 
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 0
+    Text: Really easy right? Just use your trunk to tell him!
+    AnimationTrigger: 1
+    AnimationParameter: TEACH
+  - PlayerSpeech: 1
+    Text: Oh that's cool! I'll don't have a trunk though...
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: 'Oh you''re right, Silly me!  Just use Octo''s easel to draw it out! '
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: They're always happy to let other people try out their art skills!
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 1
+    Text: That's a good idea! Will do.
+    AnimationTrigger: 0
+    AnimationParameter: 
+  - PlayerSpeech: 0
+    Text: Thank you so much! Come back if you want me to show you the gestures again!
+    AnimationTrigger: 0
+    AnimationParameter: 
